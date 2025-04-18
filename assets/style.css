@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap');
-
 :root {
-    --white: #fffffe;
-    --primary-blue: #094067;
-    --secondary-blue: #90b4ce;
-    --highlight-blue: #3da9fc;
-    --red: #ef4565;
-    --gray: #5f6c7b;
+    --background: #fef6e4;
+    --pink: #f582ae;
+    --blue1: #001858;
+    --blue2: #8bd3dd;
+    --main: #f3d2c1;
 }
 
 body {
@@ -16,37 +13,64 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
-    font-family: 'Rubik', sans-serif;
+    background-color: var(--background);
+    font-family: 'Poppins', sans-serif;
 }
 
 .app {
     display: flex;
     flex-direction: column;
-    background-color: var(--secondary-blue);
+    justify-content: space-between;
+    align-items: center;
     color: white;
-    padding: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    border: solid 3px var(--blue1);
+    background-color: var(--main);
+
+    & h1 {
+        margin-block: 20px;
+        color: var(--blue1);
+    }
+    & h3 {
+        margin-block: 0;
+        color: var(--blue1);
+    }
+}
+
+.app-divisor {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 3px;
+    background-color: var(--);
+    border-radius: 100px;
+    margin-block: 20px;
 }
 
 .info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 65px;
 }
 
 .weather-div {
     display: flex;
     flex-direction: column;
-
-    & h1 {
-        font-weight: 400;
-    }
 }
 
 .temp-div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 120px;
+
+    & select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        outline: none;
+    }
 }
 
 .city-input {
@@ -55,9 +79,17 @@ body {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 
-    & button {
+    & button, input {
         width: 100%;
+        padding: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        outline: none;
+        color: var(--blue1);
+        background-color: var(--pink);
+        border: 2px solid var(--blue1);
+        border-radius: 5px;
     }
 }
