@@ -9,23 +9,29 @@
 </head>
 <body>
     <div class="app">
+        <div class="hidden">
+            <span>Erro blabklabla</span>
+        </div>
+
         <div class="info">
             <div class="weather-div">
                 <h1 id="cityName">cidade</h1>
-                <img src="assets/img/favicon.ico" alt="" style="height: 200px; width: 200px;">
+                <img id="weatherIcon" src="assets/img/favicon.ico" alt="" style="height: 200px; width: 200px;">
                 <h3 id="weather">clima</h3>
             </div>
             <div class="temp-div">
-                <span class="temp">XX°C</span>
+                <span id="temp">XX°C</span>
                 <select name="Unidade de medida" id="tempUnit">
                     <option value="celsius">Celsius</option>
-                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="fahrenheit">Kelvin</option>
                 </select>
             </div>
         </div>
+
         <div class="app-divisor"></div>
+
         <div class="city-input">
-            <input type="text" placeholder="Cidade">
+            <input id="city" type="text" placeholder="Cidade" method="POST">
             <button type="submit">Pesquisar</button>
         </div>
     </div>

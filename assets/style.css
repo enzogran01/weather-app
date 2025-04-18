@@ -1,6 +1,7 @@
 :root {
     --background: #fef6e4;
     --pink: #f582ae;
+    --red: #f64d61;
     --blue1: #001858;
     --blue2: #8bd3dd;
     --main: #f3d2c1;
@@ -15,6 +16,10 @@ body {
     align-items: center;
     background-color: var(--background);
     font-family: 'Poppins', sans-serif;
+}
+
+.hidden {
+    display: none;
 }
 
 .app {
@@ -36,6 +41,17 @@ body {
         margin-block: 0;
         color: var(--blue1);
     }
+    & .error-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--red);
+        padding: 10px;
+        border: 3px solid var(--blue1);
+        border-radius: 7px;
+        color: var(--blue1);
+    }
 }
 
 .app-divisor {
@@ -43,7 +59,7 @@ body {
     align-items: center;
     width: 100%;
     height: 3px;
-    background-color: var(--);
+    background-color: var(--blue1);
     border-radius: 100px;
     margin-block: 20px;
 }
@@ -64,12 +80,22 @@ body {
     flex-direction: column;
     align-items: center;
     width: 120px;
+    gap: 20px;
+
+    & span {
+        font-size: 32px;
+        color: var(--blue1);
+    }
 
     & select {
         width: 100%;
-        padding: 10px;
+        padding: 5px;
         font-size: 16px;
         outline: none;
+        color: var(--blue1);
+        background-color: var(--pink);
+        border: 2px solid var(--blue1);
+        border-radius: 5px;
     }
 }
 
@@ -92,4 +118,15 @@ body {
         border: 2px solid var(--blue1);
         border-radius: 5px;
     }
+    & button {
+        cursor: pointer;
+    }
+    & button:hover {
+        transform: scale(1.09);
+    }
+    & button:active {
+        transform: scale(1);
+        background-color: #f494b9;
+    }
+
 }
