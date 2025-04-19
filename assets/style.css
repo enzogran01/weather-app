@@ -53,7 +53,9 @@ body {
     background-color: var(--main);
     overflow: hidden;
     box-shadow: 10px 10px 0px 0px var(--blue1);
+    opacity: 0;
     animation: fadeInFromBottom 1s forwards;
+    animation-delay: 1s;
 
     & h1 {
         margin-block: 20px;
