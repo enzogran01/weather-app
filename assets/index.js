@@ -10,14 +10,12 @@ const tempUnit = document.getElementById("tempUnit");
 // Função pra mostrar o clima
 function mostrarClima(dados, state, country) {
     const nomeCidade = dados.name;
-    const temp = dados.main.temp;
     const descricao = dados.weather[0].description;
+    const temp = dados.main.temp;
     const icone = dados.weather[0].icon;
     const urlIcone = `https://openweathermap.org/img/wn/${icone}@2x.png`;
 
-    const localFormatado = `${nomeCidade}, ${state} | ${country}`;
-
-    cityName.innerHTML = `${localFormatado}`;
+    cityName.innerHTML = `${nomeCidade}, ${state} | ${country}`;
     weather.innerHTML = `Clima: ${descricao}`;
     temperature.innerHTML = formatTemp(temp, tempUnit.value);
     weatherIcon.setAttribute('src', urlIcone);
