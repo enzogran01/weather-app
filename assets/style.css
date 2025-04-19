@@ -12,10 +12,29 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--background);
     font-family: 'Poppins', sans-serif;
+}
+
+.main-title {
+    position: absolute;
+    top: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+    padding: 30px;
+    border: solid 3px black;
+    border-radius: 0px 0px 100px 100px;
+    animation: fadeInFromTop 1s forwards;
+
+    & h1 {
+        margin: 0;
+    }
 }
 
 .hidden {
@@ -34,6 +53,7 @@ body {
     background-color: var(--main);
     overflow: hidden;
     box-shadow: 10px 10px 0px 0px var(--blue1);
+    animation: fadeInFromBottom 1s forwards;
 
     & h1 {
         margin-block: 20px;
@@ -127,5 +147,23 @@ body {
     & button:active {
         background-color: #f494b9;
     }
+}
 
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    } to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    } to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
