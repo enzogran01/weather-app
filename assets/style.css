@@ -32,13 +32,16 @@ body {
     border-radius: 10px;
     border: solid 3px var(--blue1);
     background-color: var(--main);
+    overflow: hidden;
+    box-shadow: 10px 10px 0px 0px var(--blue1);
 
     & h1 {
         margin-block: 20px;
         color: var(--blue1);
     }
     & h3 {
-        margin-block: 0;
+        margin-top: 20px;
+        margin-bottom: 0;
         color: var(--blue1);
     }
     & .error-message {
@@ -121,11 +124,7 @@ body {
     & button {
         cursor: pointer;
     }
-    & button:hover {
-        transform: scale(1.09);
-    }
     & button:active {
-        transform: scale(1);
         background-color: #f494b9;
     }
 
