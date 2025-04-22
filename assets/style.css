@@ -17,6 +17,7 @@ body {
     align-items: center;
     background-color: var(--background);
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 .main-title {
@@ -31,6 +32,7 @@ body {
     border: solid 3px black;
     border-radius: 0px 0px 100px 100px;
     animation: fadeInFromTop 1s forwards;
+    z-index: 1000;
 
     & h1 {
         margin: 0;
@@ -46,7 +48,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: white;
     padding: 30px;
     border-radius: 10px;
     border: solid 3px var(--blue1);
@@ -62,19 +63,7 @@ body {
         color: var(--blue1);
     }
     & h3 {
-        margin-top: 20px;
-        margin-bottom: 0;
-        color: var(--blue1);
-    }
-    & .error-message {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: var(--red);
-        padding: 10px;
-        border: 3px solid var(--blue1);
-        border-radius: 7px;
+        margin: 0;
         color: var(--blue1);
     }
 }
@@ -93,6 +82,25 @@ body {
     display: flex;
     align-items: center;
     gap: 65px;
+}
+
+.altair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    & button {
+        padding: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        outline: none;
+        color: #fff;
+        background-color: var(--blue1);
+        border: 2px solid var(--background);
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 
 .weather-div {
@@ -151,6 +159,28 @@ body {
     }
 }
 
+.more-info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 70vw;
+    padding: 30px;
+    border-radius: 10px;
+    border: solid 3px var(--blue1);
+    background-color: var(--blue2);
+    overflow: hidden;
+    box-shadow: 10px 10px 0px 0px var(--blue1);
+    opacity: 0;
+
+    & h1 {
+        color: var(--blue1);
+    }
+    & h3 {
+        margin-block: 5px;
+        color: var(--blue1);
+    }
+}
+
 @keyframes fadeInFromTop {
     from {
         opacity: 0;
@@ -167,5 +197,23 @@ body {
     } to {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    } to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes fadeOutToRight {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    } to {
+        opacity: 0;
+        transform: translateX(100px);
     }
 }

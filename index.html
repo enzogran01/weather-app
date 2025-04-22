@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherSearch APP</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="icon" type = 'image/png' href="assets/img/favicon.ico">
 </head>
 <body>
@@ -17,8 +17,8 @@
             <div class="weather-div">
                 <h1 id="cityName">Cidade: </h1>
                 <img id="weatherIcon" src="./assets/img/cloud.png"  alt="weather-icon-image" style="height: 200px; width: 200px; display: flex; justify-content: center; align-items: center;">
-                <h3 id="weather">Clima: </h3>
             </div>
+            
             <div class="temp-div">
                 <span id="temp">Temp.</span>
                 <select name="Unidade de medida" id="tempUnit">
@@ -28,13 +28,28 @@
                 </select>
             </div>
         </div>
+        <div class="altair">
+            <h3 id="weather">Clima: </h3>
+            <button id="infoToggleButton" onclick="infoToggle()">Mostrar mais</button>
+        </div>
 
         <div class="app-divisor"></div>
 
         <div class="city-input">
             <input id="city" type="text" placeholder="Cidade" method="POST">
-            <button type="submit" id="searchButton">Pesquisar</button>
+            <button id="searchButton">Pesquisar</button>
         </div>
+    </div>
+
+    <div class="more-info">
+        <h1>Informações adicionais</h1>
+        <h3 id="feelsLike">Sensação térmica: </h3>
+        <h3 id="pressure">Pressão atmosférica:</h3>
+        <h3 id="windSpeed">Rajadas de vento: </h3>
+        <h3 id="humidity">Umidade: </h3>
+        <h3 id="seaLevel">Nível do mar: </h3>
+        <h3 id="cloundiness">Nebulosidade: </h3>
+        <h3 id="precipitation">Precipitação: </h3>
     </div>
 
     <script src="./assets/index.js"></script>

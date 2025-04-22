@@ -6,6 +6,23 @@ const weatherIcon = document.getElementById("weatherIcon");
 const errorDiv = document.getElementById("error");
 const searchButton = document.getElementById("searchButton");
 const tempUnit = document.getElementById("tempUnit");
+const moreInfo = document.querySelector(".more-info");
+const infoToggleButton = document.getElementById("infoToggleButton");
+
+// Elementos informações adicionais
+const feelsLike = document.getElementById("feelsLike");
+const pressure = document.getElementById("pressure");
+const windSpeed = document.getElementById("windSpeed");
+const humidity = document.getElementById("humidity");
+const seaLevel = document.getElementById("seaLevel");
+const cloundiness = document.getElementById("cloundiness");
+const precipitation = document.getElementById("precipitation");
+
+// Função pra exibir mais informações
+function infoToggle() {
+    infoToggleButton.innerHTML === "Mostrar mais" ? moreInfo.style.animation = "fadeInFromRight 1s forwards" : moreInfo.style.animation = "fadeOutToRight 1s forwards";
+    infoToggleButton.innerHTML === "Mostrar mais" ? infoToggleButton.innerHTML = "Mostrar menos"  : infoToggleButton.innerHTML = "Mostrar mais";
+}
 
 // Função pra mostrar o clima
 function mostrarClima(dados, state, country) {
@@ -15,10 +32,26 @@ function mostrarClima(dados, state, country) {
     const icone = dados.weather[0].icon;
     const urlIcone = `https://openweathermap.org/img/wn/${icone}@2x.png`;
 
+    const sensacaoTermica = dados.main.feels_like;
+    const pressao = dados.main.pressure;
+    const rajada = dados.wind.speed;
+    const umidade = dados.main.humidity;
+    const nivelDoMar = dados.main.sea_level;
+    const nebulosidade = dados.clouds.all;
+    const precipitacao = dados.rain;
+
     cityName.innerHTML = `${nomeCidade}, ${state} | ${country}`;
     weather.innerHTML = `Clima: ${descricao}`;
     temperature.innerHTML = formatTemp(temp, tempUnit.value);
     weatherIcon.setAttribute('src', urlIcone);
+
+    feelsLike.innerHTML = `Sensação térmica: ${formatTemp(sensacaoTermica, tempUnit.value)}`;
+    pressure.innerHTML = `Pressão atmosférica: ${pressao} mb`;
+    windSpeed.innerHTML = `Rajadas de vento: ${rajada} m/s`;
+    humidity.innerHTML = `Umidade: ${umidade}%`;
+    seaLevel.innerHTML = `Nível do mar: ${nivelDoMar} mb`;
+    cloundiness.innerHTML = `Nebulosidade: ${nebulosidade}%`;
+    precipitation.innerHTML = precipitacao ? `Precipitação: ${precipitacao} mm/h` : `Precipitação: Não disponível.`;
 }
 
 // Função de formatar a temperatura baseado na unidade
