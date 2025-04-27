@@ -69,7 +69,7 @@ function formatTemp (temp, unit) {
 async function searchCoord() {
     const city = document.getElementById("city").value;
     const apiKey = 'e4c99e72d5a371d2d0a1acaa06a0aa15';
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
     try {
         const resposta = await fetch(url);
